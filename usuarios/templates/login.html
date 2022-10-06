@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %]
+
+
+{% block 'titulo' %}Login{% endblock %}
+
+
+{% block 'conteudo' %}
+<div class="container">
+
+    {% if messages %}
+        <br>
+        {% for message in messages %}
+            <div class="alert {{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <br>
+    <div class="row">
+
+        <div class="col-md-3">
+
+        </div>
+
+        <div class="col-md-4">
+            <h2>Entre na sua conta</h2>
+            <br>
+
+            <form method="POST" action="{% url 'login' %}">{% csrf_token %}
+                <label>E-mail:</label>
+                <input class="form-control" type="email" placeholder="E-mail..." name="email">
+                <br>
+                <label>Senha:</label>
+                <input class="form-control" type="password" placeholder="Senha..." name="senha">
+                <br>
+                <input type="submit" value="Login" class="btn btn-primary">
+                <a class="btn btn-success" href="{% url 'cadastro' %}">Cadastro</a>
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Cadastrar Livro</h1>
+    <br>
+    <form method="POST" action="#">{% csrf_token%}
+        <label>Nome:</label>
+        <input class="form-control" type="text" placeholder="nome..." name="nome">
+        <br>
+        <label>Autor:</label>
+        <input class="form-control" type="text" placeholder="Autor..." name="autor">
+        <br>
+        <label>Co-autor:</label>
+        <input class="form-control" type="text" placeholder="Co-autor..." name="co-autor">
+
+    </form>
+</body>
+</html>
